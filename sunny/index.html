@@ -5,9 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>陈佳佳的简历</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #000;
+        }
+        .container {
+            position: relative;
+        }
+        .main {
+            margin: 0 auto;
+            width:1200px;
+            position: relative;
+            z-index: 2;
+        }
+        .img , .bg{
+            font-size: 0
+        }
+        .bg {
+            width: 1920px;
+            height: 1240px;
+            position: absolute;
+            z-index: 1;
+            background-image: url('./images/bg_head.jpg');
+            background-position: center;
+            background-size: 1920px 1240px;
+            background-repeat: no-repeat;
+        }
+        .nav {
+            position: absolute;
+            top: 550px;
+            left: 204px;
+        }
+        .nav.fix {
+            position: fixed;
+            top: 0px;
+            left:0;           
+            padding: 20px;
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .nav.fix ul {
+           display: inline-block;
+            
+        }
+       
+        .nav li {
+            display: inline-block;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .nav li img.white {
+           display: none 
+        }
+        .nav li:hover img.white {
+            display: block;
+        }
+        .nav li:hover img.black {
+            display: none;
+        }
+    </style>
+    <script src="./js/jquery.min.js"></script>
 </head>
 <body>
-    陈佳佳
-    
+    <section class="container">
+        <!-- <div class="bg"> 
+            
+        </div> -->
+        <div class="main">
+            <div class="nav">
+               <ul>
+                    <li>
+                        <img class="black" src="./images/nav/Unclicked_01.png" alt="">
+                        <img class="white" src="./images/nav/hover_01.png" alt="">
+                    </li>
+                    <li>
+                        <img class="black" src="./images/nav/Unclicked_02.png" alt="">
+                        <img class="white" src="./images/nav/hover_02.png" alt="">
+                    </li>
+                    <li>
+                        <img class="black" src="./images/nav/Unclicked_03.png" alt="">
+                        <img class="white" src="./images/nav/hover_03.png" alt="">
+                    </li>
+                    <li>
+                        <img class="black" src="./images/nav/Unclicked_04.png" alt="">
+                        <img class="white" src="./images/nav/hover_04.png" alt="">
+                    </li>
+               </ul>
+            </div>
+            <div class="img">
+                <img src="./images/resume (1).png" alt="">
+                <img src="./images/resume (2).png" alt="">
+                <img src="./images/resume (3).png" alt="">
+                <img src="./images/resume (4).png" alt="">
+                <img src="./images/resume (5).png" alt="">
+                <img src="./images/resume (6).png" alt="">
+                <img src="./images/resume (7).png" alt="">
+                <img src="./images/resume (8).png" alt="">
+                <img src="./images/resume (9).png" alt="">
+                <img src="./images/resume (10).png" alt="">
+                <img src="./images/resume (11).png" alt="">
+                <img src="./images/resume (12).png" alt="">
+                <img src="./images/resume (13).png" alt="">
+                <img src="./images/resume (14).png" alt="">
+            </div>
+        </div>
+    </section>    
 </body>
+<script>    
+    $(function(){
+        // 监听滚动事件
+        $(document).on('scroll',function(){
+            var scollTop = $(this).scrollTop();            
+            if(scollTop>900){
+                console.log('scollTop', scollTop)
+                $('div.nav').addClass('fix')
+            }else {
+                $('div.nav').removeClass('fix')
+            }
+        })
+    })
+</script>
 </html>
