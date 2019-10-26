@@ -1,0 +1,558 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Conerstone Core · Cornerstone源码解析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="HarryChen">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../introduction/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    总览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Conerstone Core
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    概念
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="concepts/enabledElement.html">
+            
+                <a href="concepts/enabledElement.html">
+            
+                    
+                    Enabled Element
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="concepts/imageIds.html">
+            
+                <a href="concepts/imageIds.html">
+            
+                    
+                    Image Ids
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="concepts/imageLoaders.html">
+            
+                <a href="concepts/imageLoaders.html">
+            
+                    
+                    Image Loaders
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="concepts/viewports.html">
+            
+                <a href="concepts/viewports.html">
+            
+                    
+                    Viewports
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="concepts/images.html">
+            
+                <a href="concepts/images.html">
+            
+                    
+                    Images
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.6" data-path="concepts/pixelCoordinateSystem.html">
+            
+                <a href="concepts/pixelCoordinateSystem.html">
+            
+                    
+                    Pixel Coordinate System
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.7" data-path="concepts/renderingLoop.html">
+            
+                <a href="concepts/renderingLoop.html">
+            
+                    
+                    Rendering Loop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.8" data-path="concepts/renderingPipeline.html">
+            
+                <a href="concepts/renderingPipeline.html">
+            
+                    
+                    Rendering Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.9" data-path="concepts/metadataProviders.html">
+            
+                <a href="concepts/metadataProviders.html">
+            
+                    
+                    Metadata Providers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.10" data-path="concepts/imageCache.html">
+            
+                <a href="concepts/imageCache.html">
+            
+                    
+                    Image Cache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.11" data-path="concepts/modalityLUTandVoiLUT.html">
+            
+                <a href="concepts/modalityLUTandVoiLUT.html">
+            
+                    
+                    Modality LUT and VOI LUT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    分析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="analysis/howToTransformCoordinate.html">
+            
+                <a href="analysis/howToTransformCoordinate.html">
+            
+                    
+                    如何实现坐标系转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="analysis/howToRender.html">
+            
+                <a href="analysis/howToRender.html">
+            
+                    
+                    渲染过程发生了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="analysis/howToCacheImage.html">
+            
+                <a href="analysis/howToCacheImage.html">
+            
+                    
+                    如何实现缓存机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="analysis/designPattern.html">
+            
+                <a href="analysis/designPattern.html">
+            
+                    
+                    运用了哪些设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../introduction/认识cornerstone.md">
+            
+                <span>
+            
+                    
+                    Conerstone Tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../tools/continue.html">
+            
+                <a href="../tools/continue.html">
+            
+                    
+                    待写
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../introduction/认识cornerstone.md">
+            
+                <span>
+            
+                    
+                    Conerstone Image Loader
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../imageLoader/continue.html">
+            
+                <a href="../imageLoader/continue.html">
+            
+                    
+                    待写
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Conerstone Core</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cornerstone-core">Cornerstone Core</h1>
+<blockquote>
+<p>Cornerstone Core, which is a lightweight JavaScript library for displaying medical images in modern web browsers that support the HTML5 canvas element. Cornerstone Core is not meant to be a complete application itself, but rather a component that can be used as part of larger, more complex applications.</p>
+</blockquote>
+<p><a href="https://github.com/cornerstonejs/cornerstone.git" target="_blank">Cornerstone Core</a> &#x662F;&#x4E00;&#x4E2A;&#x652F;&#x6301;&#x5728;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x5C55;&#x793A;&#x533B;&#x7597;&#x5F71;&#x50CF;&#x7684;&#x8F7B;&#x91CF;&#x7EA7;js&#x5E93;&#xFF0C;&#x56FE;&#x50CF;&#x7ED8;&#x5236;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4F7F;&#x7528;cancas&#x6216;webGL&#x3002;Cornerstone Core&#x4F5C;&#x4E3A;Cornerstone&#x7684;&#x6838;&#x5FC3;&#x5E93;&#xFF0C;&#x5B83;&#x4EC5;&#x4EC5;&#x4F5C;&#x4E3A;&#x6700;&#x5E95;&#x5C42;&#x7684;&#x6E32;&#x67D3;&#x7EC4;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x6784;&#x5EFA;&#x5927;&#x578B;&#x5E94;&#x7528;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x501F;&#x52A9;cornerstone&#x914D;&#x5957;&#x7684;&#x76F8;&#x5173;&#x5E93;&#x5982;CornerstoneTools&#x7B49;&#x63D0;&#x4F9B;&#x4EA4;&#x4E92;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x60F3;&#x4F53;&#x9A8C;&#x590D;&#x6742;&#x5E94;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x524D;&#x5F80; <a href="https://viewer.ohif.org/" target="_blank">OHIF Viewer</a></p>
+<p>Cornerstone Core&#x5BF9;&#x4E8E;&#x5C55;&#x793A;&#x56FE;&#x50CF;&#x7684;&#x5BB9;&#x5668;&#x6CA1;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x4E0D;&#x53EF;&#x77E5;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5BF9;&#x4EFB;&#x610F;html&#x5143;&#x7D20;&#x5982;div&#x505A;enable&#x5904;&#x7406;&#xFF0C;&#x8D4B;&#x4E88;&#x4ED6;&#x4EEC;&#x7684;&#x5C55;&#x793A;&#x56FE;&#x50CF;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x5176;&#x5B9E;&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x5BB9;&#x5668;&#x5185;&#x90E8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;canvas&#x5143;&#x7D20;&#x3002;&#x53E6;&#x5916;&#xFF0C;Cornerstone Core&#x4E5F;&#x6CA1;&#x6709;&#x8BFB;&#x53D6;&#x548C;&#x89E3;&#x6790;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x7684;&#x80FD;&#x529B;&#xFF0C;Image Loader&#x7684;&#x529F;&#x80FD;&#x5B8C;&#x5168;&#x4EA4;&#x7ED9;&#x4E86;&#x7C7B;&#x4F3C;<a href="https://github.com/cornerstonejs/cornerstoneWADOImageLoader" target="_blank">CornerstoneWADOImageLoader</a>&#x8FD9;&#x6837;&#x7684;DICOM&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x5668;, &#x8FD9;&#x79CD;&#x89E3;&#x8026;&#x65B9;&#x5F0F;&#x7684;&#x597D;&#x5904;&#x5C31;&#x662F;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x56FE;&#x7247;&#x7C7B;&#x578B;&#x505A;&#x76F8;&#x5E94;&#x5904;&#x7406;&#xFF0C;&#x751A;&#x81F3;&#x81EA;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x5668;&#x3002;</p>
+<p>&#x5728;&#x56FE;&#x50CF;&#x4EA4;&#x4E92;&#x65B9;&#x9762;&#xFF0C;Cornerstone Core&#x5BF9;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x4E5F;&#x662F;&#x4E0D;&#x53EF;&#x77E5;&#x7684;&#x3002;&#x5B83;&#x4EC5;&#x4EC5;&#x5173;&#x5FC3;&#x56FE;&#x7247;&#x53C2;&#x6570;&#x7684;&#x7EC8;&#x6001;&#xFF0C;&#x81F3;&#x4E8E;&#x64CD;&#x4F5C;&#x65B9;&#x5F0F;&#x6BD4;&#x5982;&#x9F20;&#x6807;&#x3001;&#x89E6;&#x6478;&#x8FD8;&#x662F;&#x952E;&#x76D8;&#x5B9E;&#x73B0;&#x7684;&#x7F29;&#x653E;&#x3001;&#x79FB;&#x52A8;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x5B83;&#x4EA4;&#x7ED9;&#x4E86;<a href="https://github.com/cornerstonejs/cornerstoneTools" target="_blank">CornerstoneTools</a>&#x8FD9;&#x4E2A;&#x5E93;&#x53BB;&#x5B9E;&#x73B0;&#x4E86;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x6982;&#x5FF5;&#xFF0C;&#x672C;&#x4E66;&#x5C06;&#x4F1A;&#x76F4;&#x63A5;&#x53C2;&#x8003;<a href="https://docs.cornerstonejs.org/" target="_blank">&#x5B98;&#x7F51;</a>&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x5E76;&#x52A0;&#x5165;&#x4F5C;&#x8005;&#x7684;&#x4E00;&#x4E9B;&#x7406;&#x89E3;&#xFF0C;&#x5EFA;&#x8BAE;&#x8BFB;&#x8005;&#x53EF;&#x4EE5;&#x5148;&#x53BB;&#x9605;&#x8BFB;&#x4E0B;&#x4ED6;&#x4EEC;&#x5B98;&#x7F51;&#x7684;&#x6587;&#x6863;&#x3002;&#x540E;&#x9762;&#x7684;&#x8BDD;&#xFF0C;&#x4F5C;&#x8005;&#x5C06;&#x4F1A;&#x9488;&#x5BF9;&#x4E00;&#x4E9B;&#x5173;&#x952E;&#x6027;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x505A;&#x4E00;&#x4E9B;&#x6E90;&#x7801;&#x89E3;&#x6790;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../introduction/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 总览">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Conerstone Core","level":"1.3","depth":1,"next":{"title":"概念","level":"1.3.1","depth":2,"ref":"","articles":[{"title":"Enabled Element","level":"1.3.1.1","depth":3,"path":"core/concepts/enabledElement.md","ref":"core/concepts/enabledElement.md","articles":[]},{"title":"Image Ids","level":"1.3.1.2","depth":3,"path":"core/concepts/imageIds.md","ref":"core/concepts/imageIds.md","articles":[]},{"title":"Image Loaders","level":"1.3.1.3","depth":3,"path":"core/concepts/imageLoaders.md","ref":"core/concepts/imageLoaders.md","articles":[]},{"title":"Viewports","level":"1.3.1.4","depth":3,"path":"core/concepts/viewports.md","ref":"core/concepts/viewports.md","articles":[]},{"title":"Images","level":"1.3.1.5","depth":3,"path":"core/concepts/images.md","ref":"core/concepts/images.md","articles":[]},{"title":"Pixel Coordinate System","level":"1.3.1.6","depth":3,"path":"core/concepts/pixelCoordinateSystem.md","ref":"core/concepts/pixelCoordinateSystem.md","articles":[]},{"title":"Rendering Loop","level":"1.3.1.7","depth":3,"path":"core/concepts/renderingLoop.md","ref":"core/concepts/renderingLoop.md","articles":[]},{"title":"Rendering Pipeline","level":"1.3.1.8","depth":3,"path":"core/concepts/renderingPipeline.md","ref":"core/concepts/renderingPipeline.md","articles":[]},{"title":"Metadata Providers","level":"1.3.1.9","depth":3,"path":"core/concepts/metadataProviders.md","ref":"core/concepts/metadataProviders.md","articles":[]},{"title":"Image Cache","level":"1.3.1.10","depth":3,"path":"core/concepts/imageCache.md","ref":"core/concepts/imageCache.md","articles":[]},{"title":"Modality LUT and VOI LUT","level":"1.3.1.11","depth":3,"path":"core/concepts/modalityLUTandVoiLUT.md","ref":"core/concepts/modalityLUTandVoiLUT.md","articles":[]}]},"previous":{"title":"总览","level":"1.2","depth":1,"path":"introduction/index.md","ref":"introduction/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","livereload","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/HarryChen0506/cornerstone-analysis.git"},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./source/images/donate.png","title":"","button":"赞赏","alipayText":" "},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"HarryChen0506","repo":"cornerstone-analysis","type":"star","size":"small","count":true}]},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"HarryChen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Cornerstone源码解析","language":"zh-hans","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*","description":"cornerstone及其生态库介绍和源码解析"},"file":{"path":"core/index.md","mtime":"2019-10-26T02:52:50.343Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-26T03:52:25.066Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
