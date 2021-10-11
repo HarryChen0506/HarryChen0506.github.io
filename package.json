@@ -5,10 +5,12 @@
   "main": "index.js",
   "directories": {
     "cornerstone-analysis": "cornerstone-analysis",
-    "react-markdown-editor-lite": "react-markdown-editor-lite"
+    "react-markdown-editor-lite": "react-markdown-editor-lite",
+    "vc-ui": "vc-ui"
   },
   "scripts": {
     "build": "node src/scripts/build.js",
+    "build:vc-ui": "node src/scripts/build_vc_ui.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
