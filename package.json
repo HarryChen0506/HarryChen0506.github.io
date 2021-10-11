@@ -6,7 +6,8 @@
   "directories": {
     "cornerstone-analysis": "cornerstone-analysis",
     "react-markdown-editor-lite": "react-markdown-editor-lite",
-    "vc-ui": "vc-ui"
+    "vc-ui": "vc-ui",
+    "vc-utils": "vc-utils"
   },
   "scripts": {
     "build": "node src/scripts/build.js",
