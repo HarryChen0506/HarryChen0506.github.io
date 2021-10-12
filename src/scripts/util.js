@@ -18,10 +18,10 @@ function preprocess() {
 }
 
 // 下载git项目
-function downloadProject({ url, dest, onError, onSuccess }) {
+function downloadProject({ url, dest, options = {}, onError, onSuccess }) {
   const spinner = ora('start download ...')
   spinner.start()
-  download(url, dest, err => {
+  download(url, dest, options, err => {
     if (err) {
       spinner.fail()
       console.log(symbols.error, chalk.red(err))
