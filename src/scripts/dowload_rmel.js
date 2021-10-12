@@ -22,6 +22,7 @@ function preprocess() {
     rmDir(path.resolve(cwd, TEMP_DIR))
   }
 }
+
 // 下载git项目
 function downloadProject({ url, dest, onError, onSuccess }) {
   const spinner = ora('start download ...')
@@ -49,6 +50,7 @@ function downloadProject({ url, dest, onError, onSuccess }) {
     typeof onSuccess === 'function' && onSuccess()
   })
 }
+
 // 下载repo
 function downloadRepo({
   onSuccess

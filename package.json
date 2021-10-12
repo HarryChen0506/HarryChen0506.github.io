@@ -10,8 +10,10 @@
     "vc-utils": "vc-utils"
   },
   "scripts": {
+    "test:git": "node src/scripts/testDemo.js",
     "build": "node src/scripts/build.js",
     "build:vc-ui": "node src/scripts/build_vc_ui.js",
+    "build:vc-utils": "node src/scripts/build_vc_utils.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,7 +32,7 @@
     "handlebars": "^4.7.7",
     "log-symbols": "^3.0.0",
     "ora": "^4.0.3",
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.4",
     "yargs": "^15.1.0"
   }
 }
