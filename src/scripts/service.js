@@ -28,13 +28,19 @@ const downloadRepo = ({ repoUrl } = {}) => {
 
   // 创建
   mkDir(TEMP_DEST)
-  shell.exec("cd " + TEMP_DEST + "&& " + "git clone " + repoUrl)
+  const result = shell.exec("cd " + TEMP_DEST + "&& " + "git clone " + repoUrl)
+  if (result.code !== 0) {
+    console.log(symbols.error, chalk.green('git clone 仓库失败！', repoUrl))
+    shell.exit(1)
+  }
   console.log(symbols.success, chalk.green('git clone 仓库成功！', repoUrl))
 }
 
 // 安装依赖
-function installModules({ repoDest } = {}) {
-  if (!shell.which('yarn')) {
+function installModules({ repoDest, installCommand } = {}) {
+
+  installCommand = installCommand || 'yarn install'
+  if (installCommand.includes('yarn') && !shell.which('yarn')) {
     //在控制台输出内容
     shell.echo('Sorry, this script requires yarn to install dependencies')
     shell.exit(1)
@@ -44,7 +50,12 @@ function installModules({ repoDest } = {}) {
   let spinner = ora('Installing...')
   spinner.start()
   // 命令行操作安装依赖
-  shell.exec("cd " + repoDest + "&& yarn install")
+
+  const result = shell.exec(`cd ${repoDest} && ${installCommand}`)
+  if (result.code !== 0) {
+    console.log(symbols.error, chalk.green('安装依赖失败！'))
+    shell.exit(1)
+  }
   spinner.succeed()
   console.log(symbols.success, chalk.green('The package.json has installed dependence successfully!'))
 }
@@ -81,9 +92,9 @@ function afterBuild({ repoDest, targetDir, docsDir }) {
 }
 
 /* ------ 构建 ------*/
-const buildDocs = ({ repoName, buildCommand, targetDir, docsDir }) => {
+const buildDocs = ({ repoName, buildCommand, installCommand, targetDir, docsDir }) => {
   const repoDest = path.resolve(cwd, TEMP_DIR, repoName)
-  installModules({ repoDest })
+  installModules({ repoDest, installCommand })
   createHtml({ repoDest, buildCommand })
   afterBuild({ repoDest, targetDir, docsDir })
 }
